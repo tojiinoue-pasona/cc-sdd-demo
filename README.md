@@ -33,6 +33,9 @@ sudo apt install php8.3 php8.3-sqlite3 php8.3-xml php8.3-curl php8.3-mbstring
 ```bash
 php -v  # 8.3以上が表示されればOK
 ```
+```
+PHP 8.3.x (cli) ...
+```
 
 ---
 
@@ -53,21 +56,48 @@ https://getcomposer.org/Composer-Setup.exe をダウンロードして実行
 ```bash
 composer -V
 ```
+```
+Composer version 2.x.x ...
+```
 
 ---
 
 ## セットアップ
 
 ```bash
-# 1. リポジトリをクローン
+# 1. プロジェクトを置きたいディレクトリに移動してからクローン
+cd ~/Documents  # 任意のディレクトリに移動
 git clone <repository-url>
 cd <project-directory>
 
 # 2. セットアップ（依存インストール・.env生成・DB作成・シーダー実行を一括で行います）
 composer run setup
+```
 
+成功すると以下のような出力が表示されます：
+
+```
+Installing dependencies from lock file ...
+...（省略）...
+Generating optimized autoload files
+> php artisan key:generate
+   INFO  Application key set successfully.
+> php artisan migrate --seed --force
+   INFO  Running migrations.
+  2026_xx_xx_create_todos_table .................. DONE
+   INFO  Seeding database.
+  Database\Seeders\TodoSeeder .................... DONE
+```
+
+```bash
 # 3. 開発サーバー起動
 php artisan serve
+```
+
+成功すると以下のような出力が表示されます：
+
+```
+   INFO  Server running on [http://127.0.0.1:8000].
 ```
 
 ブラウザで http://localhost:8000 にアクセスしてください。
@@ -78,6 +108,16 @@ php artisan serve
 
 ```bash
 php artisan test
+```
+
+成功すると以下のような出力が表示されます：
+
+```
+   PASS  Tests\Unit\ExampleTest
+   PASS  Tests\Feature\ExampleTest
+   PASS  Tests\Feature\TodoFoundationTest
+
+  Tests:    4 passed (13 assertions)
 ```
 
 ---
