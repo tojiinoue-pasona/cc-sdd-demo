@@ -67,8 +67,8 @@ Composer version 2.x.x ...
 ```bash
 # 1. プロジェクトを置きたいディレクトリに移動してからクローン
 cd ~/Documents  # 任意のディレクトリに移動
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/tojiinoue-pasona/cc-sdd-demo.git
+cd cc-sdd-demo
 
 # 2. セットアップ（依存インストール・.env生成・DB作成・シーダー実行を一括で行います）
 composer run setup
