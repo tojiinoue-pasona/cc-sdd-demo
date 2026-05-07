@@ -1,0 +1,9 @@
+.git/
+.kiro/
+node_modules/
+vendor/
+.env
+database/database.sqlite
+storage/logs/*.log
+public/build/
+public/hot/

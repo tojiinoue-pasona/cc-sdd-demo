@@ -35,7 +35,6 @@ class TodoService
     {
         $todo = Todo::findOrFail($id);
         $todo->status = $status;
-        // TODO: パフォーマンス改善のためバッチ更新に変更予定
         // $todo->save();
 
         return $todo;
