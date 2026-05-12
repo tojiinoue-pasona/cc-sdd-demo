@@ -34,10 +34,10 @@ docker compose up
  ✔ Container cc-sdd-demo-app-1  Created
 Attaching to cc-sdd-demo-app-1
 ...
-   INFO  Server running on [http://0.0.0.0:8000].
+   INFO  Server running on [http://0.0.0.0:8080].
 ```
 
-ブラウザで <http://localhost:8000> にアクセスしてください。
+ブラウザで <http://localhost:8080> にアクセスしてください。
 
 終了するには `Ctrl+C` を押してください。
 
@@ -77,13 +77,13 @@ docker compose run --rm app php artisan test
 
 Docker Desktop が起動しているか確認してください。タスクバー（Windows）またはメニューバー（macOS）に Docker のアイコンが表示されていれば起動しています。
 
-### ポート 8000 が使用中というエラーが出る場合
+### ポート 8080 が使用中というエラーが出る場合
 
-他のアプリが 8000 番ポートを使っています。`compose.yml` の `ports` を変更してください：
+他のアプリが 8080 番ポートを使っています。`compose.yml` の `ports` を変更してください：
 
 ```yaml
 ports:
-  - "8080:8000"  # 左側の数字を変える
+  - "8080:8080"  # 左側の数字を変える
 ```
 
 その後 <http://localhost:8080> にアクセスしてください。
