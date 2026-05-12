@@ -17,6 +17,6 @@ COPY . .
 RUN php artisan package:discover --ansi \
     && chmod -R 775 storage bootstrap/cache
 
-EXPOSE 8000
+EXPOSE 8080
 
 ENTRYPOINT ["sh", "docker/entrypoint.sh"]
